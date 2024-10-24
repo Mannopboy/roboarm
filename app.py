@@ -18,8 +18,8 @@ mp_hands = mp.solutions.hands
 
 def calculate_distance(point1, point2):
     return math.sqrt(
-        (point2.x - point1.x)  2 +
-        (point2.y - point1.y)  2 +
+        (point2.x - point1.x) ** 2 +
+        (point2.y - point1.y) ** 2 +
         (point2.z - point1.z) ** 2
     )
 
@@ -118,7 +118,7 @@ def student_PUT():
     data = request.get_json()
     print(data)
     return jsonify([
-        'Student updateed'
+        'Student updated'  # Fixed typo from "updateed"
     ])
 
 
@@ -140,3 +140,12 @@ def info(msg):
 @socketio.on('connect')
 def handle_connect():
     print('Client connected')
+
+
+@socketio.on('disconnect')
+def handle_disconnect():
+    print('Client disconnected')
+
+
+if __name__ == '__main__':
+    socketio.run(app)

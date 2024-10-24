@@ -1,0 +1,14 @@
+body {
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+#camera-feed {
+    border: 2px solid #ddd;
+    width: 80%;
+    height: auto;
+}
